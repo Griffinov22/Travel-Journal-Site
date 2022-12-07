@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  --font: "Inter", sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+}
+/* title for card */
+h2 {
+  font-size: 2.1em;
+  font-weight: 700;
+}
+/* body text for card */
+p {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+/* #root * {
+  outline: 2px solid red;
+} */
+
+nav {
+  background-color: rgba(245, 90, 90, 1);
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.main-header {
+  color: white;
+  font-weight: 500;
+  font-size: 1.1em;
+  letter-spacing: -0.075rem;
+  transition: all 200ms ease-in-out;
+}
+.globe-svg {
+  width: 30px;
+  aspect-ratio: 1/1;
+  stroke: white;
+  fill: white;
+  cursor: pointer;
+}
+.globe-svg:hover {
+  animation-name: colors;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: infinite; */
+  animation-timing-function: ease-in-out;
+  animation-direction: normal;
+}
+
+@keyframes colors {
+  0% {
+    fill: white;
+  }
+  25% {
+    fill: green;
+  }
+  50% {
+    fill: yellow;
+  }
+  75% {
+    fill: purple;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+.globe-svg:hover + h1 {
+  font-size: 1.2em;
+  letter-spacing: 0.001em;
+}
+
+/* card */
+.card-section {
+  display: flex;
+  height: 300px;
+  margin: 50px;
+  border-bottom: 2px solid rgba(245, 245, 245, 1);
+}
+
+/* floating picture */
+.travel-pic {
+  width: 200px;
+  border-radius: 10px;
+}
+.img-container {
+  float: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  height: 100%;
+}
+
+/* location header */
+.location-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  flex-wrap: wrap;
+}
+
+.map-marker {
+  width: 7px;
+  height: 9.55px;
+  transform: scale(2);
+}
+
+.location-p {
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.maps-link {
+  color: rgba(145, 142, 155, 1);
+}
+
+/* content inside card */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px;
+}
+
+.time-range {
+  font-weight: 700;
+}
+
+.desc {
+  font-size: 0.9em;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+/* image is 200px at load */
+@media (max-width: 780px) {
+  h2 {
+    font-size: 1.5em;
+  }
+  .location-header {
+    font-size: 0.8em;
+  }
+  .content {
+    padding-right: 0;
+  }
+}
+@media (max-width: 650px) {
+  h2 {
+    font-size: 1em;
+  }
+  .time-range {
+    font-size: 0.8em;
+  }
+  .img-container {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 553px) {
+  .content {
+    padding-left: 1em;
+  }
+}
+
+@media (max-width: 516px) {
+  .travel-pic {
+    width: 175px;
+  }
+  .location-header {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 466px) {
+  .travel-pic {
+    width: 150px;
+  }
+}
+@media (max-width: 420px) {
+  h2 {
+    font-size: 0.8em;
+  }
+  .desc {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+}
+
+@media (max-width: 434px) {
+  .content {
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+  }
+}
